@@ -1,0 +1,43 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "experimental-decorator"
+version = "0.1.0"
+description = "A decorator to mark functions, methods, and classes as experimental."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.9"
+authors = [
+    { name = "Sam Zweig" },
+]
+keywords = ["experimental", "warning", "decorator", "api", "stability"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/samuelzweig/experimental-decorator"
+Issues = "https://github.com/samuelzweig/experimental-decorator/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/experimental_decorator"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
